@@ -1,0 +1,99 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 210 79% 33%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 68% 53%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-montserrat;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .top-bar {
+    @apply bg-sam-blue text-white py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center text-sm;
+  }
+
+  .nav-bar {
+    @apply bg-white shadow-md py-4 px-4 md:px-8 flex justify-between items-center sticky top-0 z-50;
+  }
+
+  .nav-link {
+    @apply px-3 py-2 text-sam-gray hover:text-sam-blue-light transition-colors duration-300 font-medium;
+  }
+
+  .nav-link.active {
+    @apply text-sam-blue border-b-2 border-sam-blue;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-sam-blue text-center relative;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply block w-20 h-1 bg-sam-blue-light mx-auto mt-2;
+  }
+
+  .btn-primary {
+    @apply bg-sam-blue hover:bg-sam-blue-light text-white font-medium py-2 px-6 rounded shadow-md transition-all duration-300 inline-block;
+  }
+
+  .social-icon {
+    @apply w-5 h-5 text-white hover:text-sam-blue-light transition-colors duration-300;
+  }
+
+  .card-hover {
+    @apply transition-transform duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  .service-card {
+    @apply bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center card-hover;
+  }
+
+  .form-input {
+    @apply w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sam-blue-light;
+  }
+}
